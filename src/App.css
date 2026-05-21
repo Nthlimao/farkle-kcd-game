@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-height: 100svh;
+}
+
+.app h1 {
+  margin: 0;
+}
