@@ -1,9 +1,13 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  // GitHub Pages serves the app from /repo-name/; CI sets VITE_BASE_PATH
-  base: process.env.VITE_BASE_PATH || '/',
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+
+  return {
+    plugins: [react()],
+    // CI/shell sets process.env; .env.production supplies local GitHub Pages path
+    base: process.env.VITE_BASE_PATH || env.VITE_BASE_PATH || '/',
+  }
 })

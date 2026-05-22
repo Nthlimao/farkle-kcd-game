@@ -18,6 +18,13 @@ npm run build
 npm run preview
 ```
 
+To test the GitHub Pages path locally (open `/farkle-kcd-game/` on the preview server):
+
+```bash
+# Git Bash / macOS / Linux
+VITE_BASE_PATH=/farkle-kcd-game/ npm run preview:pages
+```
+
 ## Deploy (GitHub Pages)
 
 1. Push this repository to GitHub.
@@ -27,9 +34,11 @@ npm run preview
 
 The live URL will be:
 
-`https://<your-github-username>.github.io/farkle-kcd-game/`
+[https://nthlimao.github.io/farkle-kcd-game/](https://nthlimao.github.io/farkle-kcd-game/)
 
-If you rename the repository, update the `VITE_BASE_PATH` in the deploy workflow so asset paths stay correct.
+This is a **project site** under your user Pages root ([nthlimao.github.io](https://nthlimao.github.io)); it does not replace the site served from your `nthlimao.github.io` repository.
+
+Production builds read `process.env.VITE_BASE_PATH` in `vite.config.js`. CI sets it to `/<repo-name>/` from the repository name; locally, use `.env.production` or pass the path when building (e.g. `/farkle-kcd-game/`).
 
 ## GitHub Actions
 
