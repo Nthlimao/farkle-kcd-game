@@ -23,7 +23,7 @@ npm run preview
 1. Push this repository to GitHub.
 2. In the repo, go to **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Push to `main` (or `master`). The [Deploy to GitHub Pages](.github/workflows/deploy.yml) workflow builds and publishes the site.
+4. Push to `main`. The [Build and Deploy](.github/workflows/deploy.yml) workflow builds and publishes the site.
 
 The live URL will be:
 
@@ -36,4 +36,4 @@ If you rename the repository, update the `VITE_BASE_PATH` in the deploy workflow
 | Workflow | Trigger | Purpose |
 | -------- | ------- | ------- |
 | [CI](.github/workflows/ci.yml) | Push / PR to `main` or `master` | Lint and build |
-| [Deploy](.github/workflows/deploy.yml) | Push to `main` or `master` | Build and publish to GitHub Pages |
+| [Build and Deploy](.github/workflows/deploy.yml) | Push to `main` | Build and publish to GitHub Pages |
