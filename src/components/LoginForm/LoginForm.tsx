@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 
@@ -16,7 +16,7 @@ export function LoginForm() {
   const [login, { loading }] = useMutation(LOGIN_MUTATION);
 
   const [rememberMe, setRememberMe] = useState(false);
-  const [formError, setFormError] = useState("");
+  const [serverError, setServerError] = useState("");
 
   const {
     register,
@@ -27,6 +27,8 @@ export function LoginForm() {
   });
 
   const onSubmit = async (input: AuthLoginInput) => {
+    setServerError("");
+    
     try {
       const { data, error } = await login({
         variables: {
@@ -35,28 +37,27 @@ export function LoginForm() {
       });
 
       if (error) {
-        setFormError(error.message);
+        setServerError(error.message);
         return;
       }
 
       const token = data?.login.token;
       if (!token) {
-        setFormError("Login failed. No token returned.");
+        setServerError("Login failed. No token returned.");
         return;
       }
 
       setAuthToken(token, rememberMe);
       navigate(0);
     } catch (err) {
-      setFormError(
+      setServerError(
         err instanceof Error ? err.message : "An unknown error occurred.",
       );
     }
   };
 
-  useEffect(() => {
-    setFormError(getLoginErrorMessage(errors));
-  }, [errors]);
+  const validationError = getLoginErrorMessage(errors);
+  const formError = validationError || serverError;
 
   return (
     <form className="login-form-component" onSubmit={handleSubmit(onSubmit)}>
