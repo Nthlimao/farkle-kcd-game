@@ -1,24 +1,25 @@
 import { LoginForm } from "@/components/LoginForm";
 import "./styles.css";
 
-const HOME_PAGE_VIDEOS = [
-  "./src/assets/videos/main_menu_trosecko.mp4",
-  "./src/assets/videos/main_menu_trosecko2.mp4",
-  "./src/assets/videos/main_menu_trosecko6.mp4",
-  "./src/assets/videos/main_menu_kutnohorsko2.mp4",
-  "./src/assets/videos/main_menu_kutnohorsko4.mp4",
+const HOME_PAGE_IMAGES = [
+  "./src/assets/images/main_menu_trosecko.png",
+  "./src/assets/images/main_menu_trosecko2.png",
+  "./src/assets/images/main_menu_trosecko6.png",
+  "./src/assets/images/main_menu_kutnohorsko2.png",
+  "./src/assets/images/main_menu_kutnohorsko4.png",
 ];
 
-function getRandomVideo(): string {
-  return HOME_PAGE_VIDEOS[Math.floor(Math.random() * HOME_PAGE_VIDEOS.length)];
+function getRandomImage(): string {
+  return HOME_PAGE_IMAGES[Math.floor(Math.random() * HOME_PAGE_IMAGES.length)];
 }
 
 export default function HomePage() {
   return (
     <div className="home-page">
-      <video autoPlay loop muted id="background-video">
+      {/* <video autoPlay loop muted id="background-video">
         <source src={getRandomVideo()} type="video/mp4" />
-      </video>
+      </video> */}
+      <img src={getRandomImage()} alt="Background" id="background-video" />
       <div className="home-page-content">
         <div className="col1"></div>
         <div className="col2">
