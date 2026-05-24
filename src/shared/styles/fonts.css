@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Kingdom Come";
+  src: url("../../assets/fonts/Kingdom_Come_Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kingdom Come";
+  src: url("../../assets/fonts/Kingdom_Come_Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kingdom Come";
+  src: url("../../assets/fonts/Kingdom_Come_Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kingdom Come Display";
+  src: url("../../assets/fonts/Kingdom_Come_Display.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

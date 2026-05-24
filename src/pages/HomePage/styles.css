@@ -1,0 +1,38 @@
+.home-page {
+  /* background-image: url("./src/assets/images/20260524115020_1.jpg"); */
+  /* background-size: cover; */
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+.home-page-content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.home-page-content .col1 {
+  width: 58%;
+}
+.home-page-content .col2 {
+  width: 42%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#background-video {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
