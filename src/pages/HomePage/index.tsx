@@ -2,11 +2,11 @@ import { LoginForm } from "@/components/LoginForm";
 import "./styles.css";
 
 const HOME_PAGE_IMAGES = [
-  "./src/assets/images/main_menu_trosecko.png",
-  "./src/assets/images/main_menu_trosecko2.png",
-  "./src/assets/images/main_menu_trosecko6.png",
-  "./src/assets/images/main_menu_kutnohorsko2.png",
-  "./src/assets/images/main_menu_kutnohorsko4.png",
+  "./assets/images/main_menu_trosecko.png",
+  "./assets/images/main_menu_trosecko2.png",
+  "./assets/images/main_menu_trosecko6.png",
+  "./assets/images/main_menu_kutnohorsko2.png",
+  "./assets/images/main_menu_kutnohorsko4.png",
 ];
 
 function getRandomImage(): string {
